@@ -10,9 +10,9 @@ use Botman\Botman\Facebook\ButtonTemplate;
 
 $config = [
 	'facebook' => [
-	  	'token' => 'EAACmh4wqjyQBAGCVhtYeLaduwu2IoVOkcmUrZAZCnoiKGzAmMzzmKbZA9e09CfKjZAOpEtxXA9Qz91zryq3G07faNnIsj8tr6f1Ao7HmPX1WuAGshQPAZCYnLZAzCQidvUmXN8mAeTDmSXBraZBxFZBNQUzn87VbTnV4Qv5MLa0klAZDZD',
-		'app_secret' => 'ffc71559a70becfdb0582bd3cbb688a2',
-	    'verification'=>'ACCUBOT',
+	  	'token' => 'EAADQLGhaeSkBAC7FOgeyjVL6X1mexDlo12G9TXGNMFckJx375eTtlVIyaQAEdsxpjXVpjNXiZCGEe3tjfuNdm3Qa7abbvSaPEDsG8VDibdqJezeCAaaND5uYWX0w4cpWY03z2SuIfL90KZAM0WQyiZCfvyTobvgfSjZA1Kip1wZDZD',
+		'app_secret' => '741f3b8f86eea022e6861534e15f7704',
+	    'verification'=>'botmanACC',
 	]
 
 ];

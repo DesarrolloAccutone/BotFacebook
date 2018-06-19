@@ -46,10 +46,10 @@ $botman->hears('Me llamo {name}', function ($bot, $name) {
 
 $botman->hears('Button', function (Botman $bot) {
     $bot->reply('¿Button?');
-    /*$bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
+    $bot->reply(ButtonTemplate::create('Do you want to know more about BotMan?')
 		->addButton(ElementButton::create('Tell me more')->type('postback')->payload('tellmemore'))
 		->addButton(ElementButton::create('Show me the docs')->url('http://botman.io/'))
-	);*/
+	);
 	$bot->reply('¿Button2?');
     /*$bot->reply(ListTemplate::create()
 	->useCompactView()

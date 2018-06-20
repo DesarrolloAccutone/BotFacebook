@@ -55,9 +55,6 @@ require('vendor/autoload.php');
 
 use App\Http\Controllers\BotManController;
 use BotMan\BotMan\BotMan;
-use BotMan\BotMan\Middleware\ApiAi;
-use BotMan\BotMan\Messages\Attachments\Image;
-use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\BotManFactory;
 

@@ -82,7 +82,7 @@ $botman = BotManFactory::create($config);
 $botman->hears('Hola', function ($bot) {
     $bot->reply('Hola! ¿Cómo estas?');
 });
-$botman->hears('Iniciar platica', BotManController::class.'@startConversation');
+$botman->hears('Iniciar platica', BotManController::class.'@platica');
 
 $botman->listen();
 

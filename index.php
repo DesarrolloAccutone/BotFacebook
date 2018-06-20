@@ -51,13 +51,39 @@ $botman->hears('Button', function (Botman $bot) {
 // Start listening
 $botman->listen();*/
 
-use App\Http\Controllers\BotManController;
+require('vendor/autoload.php');
 
-$botman = resolve('botman');
+use App\Http\Controllers\BotManController;
+use BotMan\BotMan\BotMan;
+use BotMan\BotMan\Middleware\ApiAi;
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
+use BotMan\BotMan\Drivers\DriverManager;
+use BotMan\BotMan\BotManFactory;
+
+//$botman = resolve('botman');
+
+$config = [
+	'facebook' => [
+	  	'token' => 'EAADQLGhaeSkBAC7FOgeyjVL6X1mexDlo12G9TXGNMFckJx375eTtlVIyaQAEdsxpjXVpjNXiZCGEe3tjfuNdm3Qa7abbvSaPEDsG8VDibdqJezeCAaaND5uYWX0w4cpWY03z2SuIfL90KZAM0WQyiZCfvyTobvgfSjZA1Kip1wZDZD',
+		'app_secret' => '741f3b8f86eea022e6861534e15f7704',
+	    'verification'=>'botmanACC',
+	]
+
+];
+
+// Load the driver(s) you want to use
+DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
+
+// Create an instance
+
+$botman = BotManFactory::create($config);
 
 $botman->hears('Hi', function ($bot) {
     $bot->reply('Hello!');
 });
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
+
+$botman->listen();
 
 ?>

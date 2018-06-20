@@ -79,10 +79,10 @@ DriverManager::loadDriver(\BotMan\Drivers\Facebook\FacebookDriver::class);
 
 $botman = BotManFactory::create($config);
 
-$botman->hears('Hi', function ($bot) {
-    $bot->reply('Hello!');
+$botman->hears('Hola', function ($bot) {
+    $bot->reply('Hola! ¿Cómo estas?');
 });
-$botman->hears('Start conversation', BotManController::class.'@startConversation');
+$botman->hears('Iniciar platica', BotManController::class.'@startConversation');
 
 $botman->listen();
 

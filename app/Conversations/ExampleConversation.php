@@ -8,11 +8,6 @@ use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 
-use BotMan\BotMan\Messages\Attachments\Image;
-use BotMan\BotMan\Messages\Attachments\Attachment;
-use botman\driver-facebook\Extensions\Element;
-use botman\driver-facebook\Extensions\ElementButton;
-
 class ExampleConversation extends Conversation
 {
     /**
@@ -28,7 +23,7 @@ class ExampleConversation extends Conversation
                 Button::create('Audifonos')->value('joke'),
                 Button::create('Cotizar')->value('joke'),
                 Button::create('Sitio')->value('https://www.accutone.com.mx'),
-            ]);
+            ])
 
        // $bot->reply(GenericTemplate::create()
    // ->addImageAspectRatio(GenericTemplate::RATIO_SQUARE)

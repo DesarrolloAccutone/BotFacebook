@@ -31,7 +31,8 @@ class ExampleConversation extends Conversation
                     $joke = json_decode(file_get_contents('http://api.icndb.com/jokes/random'));
                     $this->say($joke->value->joke);
                 } else {
-                    $this->say(Inspiring::quote());
+                    //$this->say(Inspiring::quote());
+                    $this->say('Inspiring::quote()');
                 }
             }
         });

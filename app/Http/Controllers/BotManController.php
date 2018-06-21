@@ -34,4 +34,9 @@ class BotManController extends Controller
     {
         $bot->startConversation(new ExampleConversation());
     }
+
+    public function iniciarPlatica(BotMan $bot)
+    {
+        $bot->iniciarPlatica(new charla());
+    }
 }

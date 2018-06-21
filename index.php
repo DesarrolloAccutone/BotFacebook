@@ -80,7 +80,7 @@ $botman->hears('Hola', function ($bot) {
 	$bot->typesAndWaits(2);
     $bot->reply('¡Hola!, Soy Accubote');
 });
-$botman->hears('Ayuda', BotManController::class.'@startConversation');
+//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 
 //$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');
 

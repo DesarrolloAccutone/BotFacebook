@@ -22,7 +22,7 @@ class ExampleConversation extends Conversation
                 Button::create('Diademas telefonicas')->value('joke'),
                 Button::create('Audifonos')->value('joke'),
                 Button::create('Cotizar')->value('joke'),
-                Button::create('Pagina Oficial')->value('quote'),
+                Button::create('Pagina Oficial')->url('https://www.accutone.com.mx'),
             ]);
 
         return $this->ask($question, function (Answer $answer) {

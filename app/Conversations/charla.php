@@ -13,7 +13,7 @@ class charla extends Conversation
     /**
      * First question
      */
-    public function PreguntaNecesitas()
+    public function askReason()
     {
         $question = Question::create("Huh - Hey si dime ¿Qué necesitas?")
             ->fallback('Unable to ask question')
@@ -40,6 +40,6 @@ class charla extends Conversation
      */
     public function run()
     {
-        $this->PreguntaNecesitas();
+        $this->askReason();
     }
 }

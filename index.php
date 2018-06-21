@@ -81,7 +81,7 @@ $botman->hears('Hi', function ($bot) {
 });
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
 
-$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');
+//$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');
 
 $botman->listen();
 

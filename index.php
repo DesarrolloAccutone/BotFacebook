@@ -57,6 +57,7 @@ use App\Http\Controllers\BotManController;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\BotManFactory;
+use BotMan\BotMan\Messages\Outgoing\Question;
 
 //$botman = resolve('botman');
 

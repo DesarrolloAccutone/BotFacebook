@@ -86,12 +86,14 @@ $botman->hears('Hola', function ($bot) {
 });
 
 $botman->hears('Soy {name}', function ($bot, $name) {
+	$bot->typesAndWaits(2);
 	$bot->reply('¿En que te puedo servir '.$name.' ?');
 });
 
 $botman->hears('Muestrame una imagen', function (BotMan $bot) {
     // Create attachment
-    $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
+    $attachment = new Image('http://lorempixel.com/400/200/');
+    // $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
 
     // Build message object
     $message = OutgoingMessage::create('This is my text')
@@ -100,6 +102,24 @@ $botman->hears('Muestrame una imagen', function (BotMan $bot) {
     // Reply message object
     $bot->reply($message);
 });
+
+$botman->fallback(function($bot) {
+	$bot->reply('Podrias ser mas especifico...');
+	$bot->reply('Tal vez te puede interesar');
+}
+
+	 /*$question = Question::create("Claro. ¿En que te puedo ayudar?")
+	            ->fallback('Unable to ask question')
+	            ->callbackId('ask_reason')
+	            ->addButtons([
+	                Button::create('Diademas telefonicas')->value('joke'),
+	                Button::create('Audifonos')->value('joke'),
+	                Button::create('Cotizar')->value('joke'),
+	                Button::create('Sitio')->value('https://www.accutone.com.mx'),
+	            ]);*/
+
+
+
 
 
 //------------------$botman->hears('Ayuda', BotManController::class.'@startConversation');

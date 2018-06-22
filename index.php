@@ -110,7 +110,7 @@ $botman->hears('Muestrame una imagen', function (BotMan $bot) {
 });
 
 $botman->fallback(function($bot) {
-	$bot->reply('Podrias ser mas especifico. Tal vez te pueda interesar...', BotManController::class.'@startConversation');
+	$bot->reply(BotManController::class.'@startConversation');
 	//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 });
 

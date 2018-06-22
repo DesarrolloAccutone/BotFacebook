@@ -98,8 +98,8 @@ $botman->hears('Soy {name}', function ($bot, $name) {
 
 $botman->hears('Muestrame una imagen', function (BotMan $bot) {
     // Create attachment
-    $attachment = new Image('http://lorempixel.com/400/200/');
-    // $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
+    //$attachment = new Image('http://lorempixel.com/400/200/');
+     $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
 
     // Build message object
     $message = OutgoingMessage::create('This is my text')
@@ -110,8 +110,8 @@ $botman->hears('Muestrame una imagen', function (BotMan $bot) {
 });
 
 $botman->fallback(function($bot) {
-	$bot->reply('Podrias ser mas especifico. Tal vez de pueda interesar...');
-	$question = Question::create("Claro. ¿En que te puedo ayudar?")
+	$bot->reply('Podrias ser mas especifico. Tal vez te pueda interesar...');
+	$botman = Question::create("Claro. ¿En que te puedo ayudar?")
 	            ->fallback('Unable to ask question')
 	            ->callbackId('ask_reason')
 	            ->addButtons([

@@ -57,7 +57,8 @@ use App\Http\Controllers\BotManController;
 use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\BotManFactory;
-use BotMan\BotMan\Messages\Outgoing\Question;
+use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 //$botman = resolve('botman');
 
@@ -82,7 +83,21 @@ $botman->hears('Hola', function ($bot) {
     $bot->reply('¡Hola!, Soy Accubote');
 });
 
-$botman->hears('Ayuda', BotManController::class.'@startConversation');
+
+$botman->hears('keyword', function (BotMan $bot) {
+    // Create attachment
+    $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
+
+    // Build message object
+    $message = OutgoingMessage::create('This is my text')
+                ->withAttachment($attachment);
+
+    // Reply message object
+    $bot->reply($message);
+});
+
+
+//------------------$botman->hears('Ayuda', BotManController::class.'@startConversation');
 
 //$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');
 

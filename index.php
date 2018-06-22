@@ -82,11 +82,6 @@ $botman->hears('Hola', function ($bot) {
     $bot->reply('¡Hola!, Soy Accubote');
 });
 
-$botMan->fallback('10',function (BotMan $bot) {
-                $bot->reply('Sorry, I did not understand these commands.');
-            }
-        );
-
 $botman->hears('Ayuda', BotManController::class.'@startConversation');
 
 //$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');

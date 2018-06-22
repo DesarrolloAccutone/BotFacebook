@@ -105,7 +105,7 @@ $botman->hears('Muestrame una imagen', function (BotMan $bot) {
 
 $botman->fallback(function($bot) {
 	$bot->reply('Podrias ser mas especifico. Tal vez de pueda interesar...');
-}
+});
 
 	 /*$question = Question::create("Claro. ¿En que te puedo ayudar?")
 	            ->fallback('Unable to ask question')

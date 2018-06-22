@@ -81,8 +81,7 @@ $botman->hears('Hola', function ($bot) {
     $bot->reply('¡Hola!, Soy Accubote');
 });
 
-$botMan->fallback(
-            function (BotMan $bot) {
+$botMan->fallback('10',function (BotMan $bot) {
                 $bot->reply('Sorry, I did not understand these commands.');
             }
         );

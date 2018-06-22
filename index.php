@@ -60,6 +60,12 @@ use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
+use Illuminate\Foundation\Inspiring;
+use BotMan\BotMan\Messages\Incoming\Answer;
+use BotMan\BotMan\Messages\Outgoing\Question;
+use BotMan\BotMan\Messages\Outgoing\Actions\Button;
+use BotMan\BotMan\Messages\Conversations\Conversation;
+
 //$botman = resolve('botman');
 
 $config = [
@@ -105,6 +111,15 @@ $botman->hears('Muestrame una imagen', function (BotMan $bot) {
 
 $botman->fallback(function($bot) {
 	$bot->reply('Podrias ser mas especifico. Tal vez de pueda interesar...');
+	$question = Question::create("Claro. ¿En que te puedo ayudar?")
+	            ->fallback('Unable to ask question')
+	            ->callbackId('ask_reason')
+	            ->addButtons([
+	                Button::create('Diademas telefonicas')->value('joke'),
+	                Button::create('Audifonos')->value('joke'),
+	                Button::create('Cotizar')->value('joke'),
+	                Button::create('Sitio')->value('https://www.accutone.com.mx'),
+	            ]);
 });
 
 	 /*$question = Question::create("Claro. ¿En que te puedo ayudar?")

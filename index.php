@@ -81,10 +81,15 @@ $botman = BotManFactory::create($config);
 $botman->hears('Hola', function ($bot) {
 	$bot->typesAndWaits(2);
     $bot->reply('¡Hola!, Soy Accubote');
+    $bot->typesAndWaits(2);
+    $bot->reply('¿Con quien tengo el gusto?');
 });
 
+$botman->hears('Soy {name}', function ($bot, $name) {
+	$bot->reply('¿En que te puedo servir '.$name.' ?');
+});
 
-$botman->hears('keyword', function (BotMan $bot) {
+$botman->hears('Muestrame una imagen', function (BotMan $bot) {
     // Create attachment
     $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
 

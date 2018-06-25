@@ -21,8 +21,8 @@ class ExampleConversation extends Conversation
             ->addButtons([
                 Button::create('Ubicación')->value('Ubicacion'),
                 Button::create('Muestra imagen')->value('Muestra imagen'),
-                Button::create('Cotizar')->value('joke'),
-                Button::create('Sitio')->value('https://www.accutone.com.mx'),
+                Button::create('Cotizar')->value('Cotizar'),
+                Button::create('Sitio')->value('Sitio'),
             ]);
 
         return $this->ask($question, function (Answer $answer) {

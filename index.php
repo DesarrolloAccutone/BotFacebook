@@ -129,6 +129,33 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', functio
 
 });
 
+$botman->hears('.*(Sitio|Pagina web).*', function ($bot) {
+	$attachment = new Location(20.606539, -100.378297, [
+	    'custom_payload' => true,
+	]);
+
+	// Build message object
+	$message = OutgoingMessage::create('https://www.accutone.com.mx')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+
+});
+
+$botman->hears('.*(Cotizar|Pedir).*', function ($bot) {
+	$attachment = new Location(20.606539, -100.378297, [
+	    'custom_payload' => true,
+	]);
+
+	// Build message object
+	$message = OutgoingMessage::create('https://www.accutone.com.mx/que-diadema-elegir')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+
+});
 
 
 

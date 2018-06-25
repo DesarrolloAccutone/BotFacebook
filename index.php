@@ -87,14 +87,14 @@ $botman = BotManFactory::create($config);
 
 $botman->hears('.*(Hi|Hello|Hola).*', function ($bot) {
 	$bot->typesAndWaits(2);
-    $bot->reply('¡Hola!, Soy Accubote');
+    $bot->reply('¡Hola!, Soy Accubote :D ');
     $bot->typesAndWaits(2);
     $bot->reply('¿Con quien tengo el gusto?');
 });
 
 $botman->hears('Soy {name}', function ($bot, $name) {
 	$bot->typesAndWaits(2);
-	$bot->reply('¿En que te puedo ayudar '.$name.' ?');
+	$bot->reply('¿En que te puedo ayudar '.$name.' ? ');
 });
 
 $botman->hears('Muestra imagen', function (BotMan $bot) {

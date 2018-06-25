@@ -112,7 +112,7 @@ $botman->hears('Muestrame una imagen', function (BotMan $bot) {
 
 $botman->fallback(function($bot) {
 	$bot->reply('Podrias ser mas especifico. Escribe "Ayuda" para mas opciones');
-	//$botman->hears('Ayuda', BotManController::class.'@startConversation');
+	$botman->hears('Ayuda', BotManController::class.'@startConversation');
 });
 
 $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', function ($bot) {
@@ -138,7 +138,9 @@ $botman->hears('Ayuda', BotManController::class.'@startConversation');
 
 $botman->listen();
 
-?><?php
+?>
+
+<?php
 
 /*require('vendor/autoload.php');
 
@@ -190,7 +192,7 @@ $botman->hears('Button', function (Botman $bot) {
 
 // Start listening
 $botman->listen();*/
-
+/*---------------------------------------------------------------------------------------------------------------------
 require('vendor/autoload.php');
 
 use App\Http\Controllers\BotManController;
@@ -276,6 +278,6 @@ $botman->hears('Ayuda', BotManController::class.'@startConversation');
 
 //$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');
 
-$botman->listen();
+$botman->listen();*/
 
 ?>

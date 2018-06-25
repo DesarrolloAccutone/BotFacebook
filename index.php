@@ -129,6 +129,28 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', functio
 
 });
 
+/*$botman->hears('.*(opciones|botones).*', function ($bot) {
+	$question = Question::create("Opciones:")
+            //->fallback('Unable to ask question')
+            //->callbackId('ask_reason')
+            ->addButtons([
+                Button::create('Diademas telefonicas')->value('diademas'),
+                Button::create('Audifonos')->value('Audifonos'),
+                Button::create('Cotizar')->value('Cotizar'),
+                Button::create('Sitio')->value('Sitio'),
+            ]);
+
+        return $this->ask($question, function (Answer $answer) {
+            if ($answer->isInteractiveMessageReply()) {
+                if ($answer->getValue() === 'Sitio') {
+                    $joke = json_decode(file_get_contents('http://api.icndb.com/jokes/random'));
+                    $this->say($joke->value->joke);
+                } else {
+                    $this->say(Inspiring::quote());
+                }
+            }
+        });
+});*/
 
 
 

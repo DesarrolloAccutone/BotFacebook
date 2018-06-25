@@ -19,8 +19,8 @@ class ExampleConversation extends Conversation
             ->fallback('Unable to ask question')
             ->callbackId('ask_reason')
             ->addButtons([
-                Button::create('Diademas telefonicas')->value('joke'),
-                Button::create('Audifonos')->value('joke'),
+                Button::create('Ubicación')->value('Ubicacion'),
+                Button::create('Muestra imagen')->value('Muestra imagen'),
                 Button::create('Cotizar')->value('joke'),
                 Button::create('Sitio')->value('https://www.accutone.com.mx'),
             ]);

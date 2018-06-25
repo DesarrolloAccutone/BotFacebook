@@ -92,7 +92,7 @@ $botman->hears('.*(Hi|Hello|Hola).*', function ($bot) {
     $bot->reply('¿Con quien tengo el gusto?');
 });
 
-$botman->hears('.*(Soy {name}|Me llamo {name}).*', function ($bot, $name) {
+$botman->hears('Soy {name}', function ($bot, $name) {
 	$bot->typesAndWaits(2);
 	$bot->reply('¿En que te puedo ayudar '.$name.' ?');
 });

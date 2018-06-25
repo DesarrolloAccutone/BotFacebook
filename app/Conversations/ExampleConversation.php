@@ -23,6 +23,7 @@ class ExampleConversation extends Conversation
                 Button::create('Muestra imagen')->value('Muestra imagen'),
                 Button::create('Cotizar')->value('Cotizar'),
                 Button::create('Sitio')->value('Sitio'),
+                Button::create('Audifonos')->value('Audifonos'),
             ]);
 
         return $this->ask($question, function (Answer $answer) {

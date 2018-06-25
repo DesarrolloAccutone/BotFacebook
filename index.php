@@ -59,6 +59,8 @@ use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Attachments\Location;
+use BotMan\BotMan\Messages\Attachments\File;
+use BotMan\BotMan\Messages\Attachments\Video;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 use Illuminate\Foundation\Inspiring;
@@ -87,7 +89,7 @@ $botman = BotManFactory::create($config);
 
 $botman->hears('.*(Hi|Hello|Hola).*', function ($bot) {
 	$bot->typesAndWaits(2);
-    $bot->reply('¡Hola!, Soy Accubote :D ');
+    $bot->reply('¡Hola!, Soy Accubot :D ');
     $bot->typesAndWaits(2);
     $bot->reply('¿Con quien tengo el gusto?');
 });
@@ -143,7 +145,7 @@ $botman->hears('.*(Sitio|Pagina web).*', function ($bot) {
 
 });
 
-$botman->hears('.*(Cotizar|Pedir).*', function ($bot) {
+$botman->hears('.*(Cotizar|Pedir|Pedido).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);
@@ -157,6 +159,20 @@ $botman->hears('.*(Cotizar|Pedir).*', function ($bot) {
 
 });
 
+$botman->hears('Audifonos', function ($bot) {
+	// Create attachment
+	$attachment = new File('https://www.clinicalascondes.cl/Dev_CLC/media/Imagenes/PDF%20revista%20m%C3%A9dica/2003/1%20enero/Audifonos-9.pdf', [
+	    'custom_payload' => true,
+	]);
+
+	// Build message object
+	$message = OutgoingMessage::create('Catalogo PDF')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+
+});
 
 
 $botman->hears('Ayuda', BotManController::class.'@startConversation');

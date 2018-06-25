@@ -94,6 +94,11 @@ $botman->hears('.*(Hi|Hello|Hola).*', function ($bot) {
     $bot->reply('¿Con quien tengo el gusto?');
 });
 
+$botman->hears('.*(Gracias|Ok).*', function ($bot) {
+	$bot->typesAndWaits(2);
+    $bot->reply('Ha sido un placer :D, Escribe "ayuda" para mas opciones. ');
+});
+
 $botman->hears('Soy {name}', function ($bot, $name) {
 	$bot->typesAndWaits(2);
 	$bot->reply('¿En que te puedo ayudar '.$name.' ? ');
@@ -166,7 +171,7 @@ $botman->hears('Audifonos', function ($bot) {
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('Catalogo PDF')
+	$message = OutgoingMessage::create('Este es nuestro Catalogo ')
 	            ->withAttachment($attachment);
 
 	// Reply message object
@@ -174,19 +179,7 @@ $botman->hears('Audifonos', function ($bot) {
 
 });
 
-$botman->hears('Nosotros', function ($bot) {
-	$attachment = new Video('https://drive.google.com/open?id=1oSW42dS4qrTwFbT02YQs0qy7NEE1-Uw-', [
-	    'custom_payload' => true,
-	]);
 
-	// Build message object
-	$message = OutgoingMessage::create('This is my text')
-	            ->withAttachment($attachment);
-
-	// Reply message object
-	$bot->reply($message);
-
-});
 
 
 

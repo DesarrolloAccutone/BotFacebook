@@ -22,7 +22,6 @@ class ExampleConversation extends Conversation
                 Button::create('Ubicación')->value('Ubicacion'),
                 Button::create('Imagen')->value('Muestra imagen'),
                 Button::create('Cotizar')->value('Cotizar'),
-                Button::create('¿Quienes somos?')->value('Nosotros'),
                 Button::create('Audifonos')->value('Audifonos'),
             ]);
 

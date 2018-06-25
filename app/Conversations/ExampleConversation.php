@@ -40,7 +40,7 @@ class ExampleConversation extends Conversation
     /**
      * Start the conversation
      */
-    public function run()
+    public function ru|n()
     {
         $this->askReason();
     }

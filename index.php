@@ -86,10 +86,9 @@ $botman = BotManFactory::create($config);
 
 $botman->hears('Hola', function ($bot) {
 	$bot->typesAndWaits(2);
-    $bot->reply('¡Hola!, Soy Accubote');
+    $bot->reply(['¡Hola!, Soy Accubote','Hola, te atiende Accubote','Hey, ¡hola!',]);
     $bot->typesAndWaits(2);
     $bot->reply('¿Con quien tengo el gusto?');
-    testHola();
 });
 
 $botman->hears('Soy {name}', function ($bot, $name) {
@@ -114,13 +113,6 @@ $botman->fallback(function($bot) {
 	$bot->reply('Podrias ser mas especifico. Escribe "Ayuda" para mas opciones');
 	//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 });
-
-public function testHola(){
-	$this->bot
-			->receives('Hi')
-			->assertReply('Hola')
-			->assertReply('Gusto en conocerte')
-}
 
 	 /*$question = Question::create("Claro. ¿En que te puedo ayudar?")
 	            ->fallback('Unable to ask question')

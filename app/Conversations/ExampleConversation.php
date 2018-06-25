@@ -20,9 +20,9 @@ class ExampleConversation extends Conversation
             ->callbackId('ask_reason')
             ->addButtons([
                 Button::create('Ubicación')->value('Ubicacion'),
-                Button::create('Muestra imagen')->value('Muestra imagen'),
+                Button::create('Imagen')->value('Muestra imagen'),
                 Button::create('Cotizar')->value('Cotizar'),
-                Button::create('Sitio')->value('Sitio'),
+                Button::create('¿Quienes somos?')->value('Nosotros'),
                 Button::create('Audifonos')->value('Audifonos'),
             ]);
 

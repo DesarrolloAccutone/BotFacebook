@@ -102,7 +102,7 @@ $botman->hears('Soy {name}', function ($bot, $name) {
 $botman->hears('Muestra imagen', function (BotMan $bot) {
     // Create attachment
     //$attachment = new Image('http://lorempixel.com/400/200/');
-     $attachment = new Image('https://images.vexels.com/media/users/3/128118/isolated/preview/a2d02eb571483802db8847430207d4fe-icono-de-teclado-plano-by-vexels.png');
+     $attachment = new Image('http://accutone-usa.com/wp-content/uploads/2016/05/610-B.jpg');
 
     // Build message object
     $message = OutgoingMessage::create('This is my text')
@@ -173,6 +173,21 @@ $botman->hears('Audifonos', function ($bot) {
 	$bot->reply($message);
 
 });
+
+$botman->hears('Nosotros', function ($bot) {
+	$attachment = new Video('https://drive.google.com/open?id=1oSW42dS4qrTwFbT02YQs0qy7NEE1-Uw-', [
+	    'custom_payload' => true,
+	]);
+
+	// Build message object
+	$message = OutgoingMessage::create('This is my text')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+
+});
+
 
 
 $botman->hears('Ayuda', BotManController::class.'@startConversation');

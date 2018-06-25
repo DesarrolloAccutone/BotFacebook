@@ -132,7 +132,7 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', functio
 
 
 
-$botman->hears('Ayuda', BotManController::class.'@startConversation');
+//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 
 //$botman->hears('Iniciar Platica', BotManController::class.'@iniciarPlatica');
 

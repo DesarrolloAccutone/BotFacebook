@@ -86,7 +86,7 @@ $botman = BotManFactory::create($config);
 
 $botman->hears('Hola', function ($bot) {
 	$bot->typesAndWaits(2);
-    $bot->reply('¡Hola!, Soy Accubote','Hola, te atiende Accubote','Hey, ¡hola!',);
+    $bot->reply('¡Hola!, Soy Accubote');
     $bot->typesAndWaits(2);
     $bot->reply('¿Con quien tengo el gusto?');
 });

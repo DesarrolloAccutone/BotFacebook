@@ -116,12 +116,12 @@ $botman->fallback(function($bot) {
 });
 
 $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', function ($bot) {
-	$attachment = new Location(61.766130, -6.822510, [
+	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('This is my text')
+	$message = OutgoingMessage::create('https://www.google.com.mx/maps/place/Accutone+M%C3%A9xico/@20.606539,-100.378297,15z/data=!4m5!3m4!1s0x0:0xc8c93aa69861bf13!8m2!3d20.606539!4d-100.378297')
 	            ->withAttachment($attachment);
 
 	// Reply message object

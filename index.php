@@ -115,7 +115,7 @@ $botman->fallback(function($bot) {
 	//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 });
 
-$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', function (Botman $bot) {
+$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', function ($bot) {
 	$attachment = new Location(61.766130, -6.822510, [
 	    'custom_payload' => true,
 	]);
@@ -126,7 +126,7 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', functio
 
 	// Reply message object
 	$bot->reply($message);
-    
+
 });
 
 

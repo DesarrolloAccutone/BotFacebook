@@ -58,6 +58,7 @@ use BotMan\BotMan\BotMan;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Messages\Attachments\Image;
+use BotMan\BotMan\Messages\Attachments\Location;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 
 use Illuminate\Foundation\Inspiring;
@@ -91,9 +92,9 @@ $botman->hears('.*(Hi|Hello|Hola).*', function ($bot) {
     $bot->reply('¿Con quien tengo el gusto?');
 });
 
-$botman->hears('Soy {name}', function ($bot, $name) {
+$botman->hears('.*(Soy {name}|Me llamo {name}).*', function ($bot, $name) {
 	$bot->typesAndWaits(2);
-	$bot->reply('¿En que te puedo servir '.$name.' ?');
+	$bot->reply('¿En que te puedo ayudar '.$name.' ?');
 });
 
 $botman->hears('Muestrame una imagen', function (BotMan $bot) {
@@ -114,16 +115,19 @@ $botman->fallback(function($bot) {
 	//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 });
 
-	 /*$question = Question::create("Claro. ¿En que te puedo ayudar?")
-	            ->fallback('Unable to ask question')
-	            ->callbackId('ask_reason')
-	            ->addButtons([
-	                Button::create('Diademas telefonicas')->value('joke'),
-	                Button::create('Audifonos')->value('joke'),
-	                Button::create('Cotizar')->value('joke'),
-	                Button::create('Sitio')->value('https://www.accutone.com.mx'),
-	            ]);*/
+$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', function (Botman $bot) {
+	$attachment = new Location(61.766130, -6.822510, [
+	    'custom_payload' => true,
+	]);
 
+	// Build message object
+	$message = OutgoingMessage::create('This is my text')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+    
+});
 
 
 

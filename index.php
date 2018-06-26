@@ -166,7 +166,7 @@ $botman->hears('.*(Cotizar|Pedir|Pedido).*', function ($bot) {
 
 $botman->hears('Audifonos', function ($bot) {
 	// Create attachment
-	$attachment = new File('https://accutone--c.na30.content.force.com/sfc/servlet.shepherd/version/download/0683600000C4e1t?asPdf=false&operationContext=CHATTER', [
+	$attachment = new File('https://accutone.my.salesforce.com/sfc/p/#36000000I2cP/a/36000000boFo/vNFRNqGGlo3lhagnPuEDh1i3GRuYWpgSDd63xL3_Sq8', [
 	    'custom_payload' => true,
 	]);
 

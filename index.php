@@ -166,7 +166,7 @@ $botman->hears('.*(Cotizar|Pedir|Pedido).*', function ($bot) {
 
 $botman->hears('Audifonos', function ($bot) {
 	// Create attachment
-	$attachment = new File('https://www.dropbox.com/s/tnnusjir0rf61rn/Accutone_Catalogo_de_Audifonos.pdf', [
+	$attachment = new File('https://accutone--c.na30.content.force.com/sfc/servlet.shepherd/version/download/0683600000C4e1t?asPdf=false&operationContext=CHATTER', [
 	    'custom_payload' => true,
 	]);
 

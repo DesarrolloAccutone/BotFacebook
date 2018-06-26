@@ -166,7 +166,7 @@ $botman->hears('.*(Cotizar|Pedir|Pedido).*', function ($bot) {
 
 $botman->hears('Audifonos', function ($bot) {
 	// Create attachment
-	$attachment = new File('https://accutone.my.salesforce.com/sfc/p/#36000000I2cP/a/36000000boFo/vNFRNqGGlo3lhagnPuEDh1i3GRuYWpgSDd63xL3_Sq8', [
+	$attachment = new File('https://www.clinicalascondes.cl/Dev_CLC/media/Imagenes/PDF%20revista%20m%C3%A9dica/2003/1%20enero/Audifonos-9.pdf', [
 	    'custom_payload' => true,
 	]);
 

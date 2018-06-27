@@ -104,7 +104,7 @@ $botman->hears('Soy {name}', function ($bot, $name) {
 	$bot->reply('¿En que te puedo ayudar '.$name.' ? ');
 });
 
-$botman->hears('Muestra imagen', function (BotMan $bot) {
+$botman->hears('Promocion', function (BotMan $bot) {
     // Create attachment
     //$attachment = new Image('http://lorempixel.com/400/200/');
      $attachment = new Image('http://accutone-usa.com/wp-content/uploads/2016/05/610-B.jpg');
@@ -119,10 +119,9 @@ $botman->hears('Muestra imagen', function (BotMan $bot) {
 
 $botman->fallback(function($bot) {
 	$bot->reply('Podrias ser mas especifico. Escribe "Ayuda" para mas opciones');
-	//$botman->hears('Ayuda', BotManController::class.'@startConversation');
 });
 
-$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', function ($bot) {
+$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);
@@ -136,7 +135,7 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección).*', functio
 
 });
 
-$botman->hears('.*(Sitio|Pagina web).*', function ($bot) {
+$botman->hears('.*(Sitio|Pagina web|Página|Pagina).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);

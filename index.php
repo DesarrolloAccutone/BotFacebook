@@ -150,7 +150,7 @@ $botman->hears('.*(Sitio|Pagina web).*', function ($bot) {
 
 });
 
-$botman->hears('.*(Cotizar|Pedir|Pedido).*', function ($bot) {
+$botman->hears('.*(Cotizar|Pedir|Pedido|Comprar|Cotizacion|Cotización).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);
@@ -166,7 +166,23 @@ $botman->hears('.*(Cotizar|Pedir|Pedido).*', function ($bot) {
 
 $botman->hears('Audifonos', function ($bot) {
 	// Create attachment
-	$attachment = new File('http://download2230.mediafire.com/8lw8eawtageg/x1dqirsin692kmz/Accutone_CatalogodeAudifonos+%281%29.pdf', [
+	$attachment = new Location(20.606539, -100.378297, [
+	    'custom_payload' => true,
+	]);
+
+	// Build message object
+	$message = OutgoingMessage::create('http://download2230.mediafire.com/8lw8eawtageg/x1dqirsin692kmz/Accutone_CatalogodeAudifonos+%281%29.pdf')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+
+});
+
+
+/*$botman->hears('Audifonos', function ($bot) {
+	// Create attachment
+	$attachment = new File('https://www.clinicalascondes.cl/Dev_CLC/media/Imagenes/PDF%20revista%20m%C3%A9dica/2003/1%20enero/Audifonos-9.pdf', [
 	    'custom_payload' => true,
 	]);
 
@@ -177,7 +193,7 @@ $botman->hears('Audifonos', function ($bot) {
 	// Reply message object
 	$bot->reply($message);
 
-});
+});*/
 
 
 

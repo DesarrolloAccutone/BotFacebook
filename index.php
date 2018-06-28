@@ -170,7 +170,7 @@ $botman->hears('Audifonos', function ($bot) {
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('https://www.dropbox.com/home/Bot?preview=Accutone_Catalogo_de_Audifonos.pdf')
+	$message = OutgoingMessage::create('Este es nuestro catalogo: https://www.dropbox.com/s/tnnusjir0rf61rn/Accutone_Catalogo_de_Audifonos.pdf?dl=0')
 	            ->withAttachment($attachment);
 
 	// Reply message object

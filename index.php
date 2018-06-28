@@ -92,17 +92,21 @@ $botman->hears('.*(Hi|Hello|Hola).*', function ($bot) {
     $bot->reply('¡Hola!, Soy Accubot :D ');
     $bot->typesAndWaits(2);
     $bot->reply('¿Con quien tengo el gusto?');
+	$botman->hears('Soy {name}', function ($bot, $name) {
+		$bot->typesAndWaits(2);
+		$bot->reply('¿En que te puedo ayudar '.$name.' ? ');
+	});
 });
 
 $botman->hears('.*(Gracias|Ok).*', function ($bot) {
 	$bot->typesAndWaits(2);
-    $bot->reply('Ha sido un placer :D, Escribe "ayuda" para mas opciones. ');
+    $bot->reply('Ha sido un placer :D. Escribe "ayuda" para mostrar opciones de interes. ');
 });
 
-$botman->hears('Soy {name}', function ($bot, $name) {
+/*$botman->hears('Soy {name}', function ($bot, $name) {
 	$bot->typesAndWaits(2);
 	$bot->reply('¿En que te puedo ayudar '.$name.' ? ');
-});
+});*/
 
 $botman->hears('Promocion', function (BotMan $bot) {
     // Create attachment

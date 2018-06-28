@@ -118,10 +118,7 @@ $botman->hears('Promocion', function (BotMan $bot) {
 });
 
 $botman->fallback(function($bot) {
-	$bot->typesAndWaits(4);
-	$bot->reply('No puedo comprender del todo lo que me indicas :(. Escribe "Ayuda" para mas opciones');
-	$bot->reply('O puedes ingresar a nuestra pagina oficial para mas información: ');
-	$bot->reply('https://www.accutone.com.mx/');
+	$bot->reply('No puedo comprender del todo tu petición. Escribe "Ayuda" para mas opciones');
 });
 
 $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?).*', function ($bot) {
@@ -130,7 +127,7 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('Estamos ubicados justo aquí :D: https://www.google.com.mx/maps/place/Accutone+M%C3%A9xico/@20.606539,-100.378297,15z/data=!4m5!3m4!1s0x0:0xc8c93aa69861bf13!8m2!3d20.606539!4d-100.378297')
+	$message = OutgoingMessage::create('https://www.google.com.mx/maps/place/Accutone+M%C3%A9xico/@20.606539,-100.378297,15z/data=!4m5!3m4!1s0x0:0xc8c93aa69861bf13!8m2!3d20.606539!4d-100.378297')
 	            ->withAttachment($attachment);
 
 	// Reply message object

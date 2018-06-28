@@ -118,7 +118,7 @@ $botman->hears('Promocion', function (BotMan $bot) {
 });
 
 $botman->fallback(function($bot) {
-	$bot->reply('No puedo comprender del todo tu petición. Escribe "Ayuda" para mas opciones');
+	$bot->reply('Podrias ser mas especifico. Escribe "Ayuda" para mas opciones');
 });
 
 $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?).*', function ($bot) {
@@ -127,7 +127,7 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('https://www.google.com.mx/maps/place/Accutone+M%C3%A9xico/@20.606539,-100.378297,15z/data=!4m5!3m4!1s0x0:0xc8c93aa69861bf13!8m2!3d20.606539!4d-100.378297')
+	$message = OutgoingMessage::create('Estamos ubicados justo aqui :D : https://www.google.com.mx/maps/place/Accutone+M%C3%A9xico/@20.606539,-100.378297,15z/data=!4m5!3m4!1s0x0:0xc8c93aa69861bf13!8m2!3d20.606539!4d-100.378297')
 	            ->withAttachment($attachment);
 
 	// Reply message object
@@ -155,7 +155,7 @@ $botman->hears('.*(Cotizar|Pedir|Pedido|Comprar|Cotizacion|Cotización).*', func
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('Puedes cotizar en la siguiente página: https://www.accutone.com.mx/que-diadema-elegir')
+	$message = OutgoingMessage::create('Aqui puedes realizar tu cotización: https://www.accutone.com.mx/que-diadema-elegir')
 	            ->withAttachment($attachment);
 
 	// Reply message object
@@ -170,7 +170,7 @@ $botman->hears('Audifonos', function ($bot) {
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('Este es nuestro catalogo ;): https://www.dropbox.com/s/tnnusjir0rf61rn/Accutone_Catalogo_de_Audifonos.pdf?dl=0') ;)
+	$message = OutgoingMessage::create('Este es nuestro catalogo :D https://www.dropbox.com/s/tnnusjir0rf61rn/Accutone_Catalogo_de_Audifonos.pdf?dl=0')
 	            ->withAttachment($attachment);
 
 	// Reply message object

@@ -20,9 +20,10 @@ class ExampleConversation extends Conversation
             ->callbackId('ask_reason')
             ->addButtons([
                 Button::create('Ubicación')->value('Ubicacion'),
-                Button::create('Promo del mes')->value('Promocion'),
-                Button::create('Cotizar')->value('Cotizar'),
+                Button::create('Promo del mes')->value('Promoción'),
+                Button::create('Cotizar Diademas')->value('Cotizar'),
                 Button::create('Audifonos')->value('Audifonos'),
+                Button::create('Soporte')->value('Soporte'),
             ]);
 
         return $this->ask($question, function (Answer $answer) {

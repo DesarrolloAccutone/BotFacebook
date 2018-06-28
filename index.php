@@ -170,7 +170,22 @@ $botman->hears('Audifonos', function ($bot) {
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('http://download2230.mediafire.com/8lw8eawtageg/x1dqirsin692kmz/Accutone_CatalogodeAudifonos+%281%29.pdf')
+	$message = OutgoingMessage::create('https://www.dropbox.com/home/Bot?preview=Accutone_Catalogo_de_Audifonos.pdf')
+	            ->withAttachment($attachment);
+
+	// Reply message object
+	$bot->reply($message);
+
+});
+
+$botman->hears('Soporte', function ($bot) {
+	// Create attachment
+	$attachment = new Location(20.606539, -100.378297, [
+	    'custom_payload' => true,
+	]);
+
+	// Build message object
+	$message = OutgoingMessage::create('Puedes ingresar al siguiente link para ir a soporte: https://www.accutone.com.mx/soporte-tecnico')
 	            ->withAttachment($attachment);
 
 	// Reply message object

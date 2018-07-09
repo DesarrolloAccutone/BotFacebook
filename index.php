@@ -104,6 +104,11 @@ $botman->hears('.*(Soy {name}|Me llamo {name}).*', function ($bot, $name) {
 	$bot->reply('¿En que te puedo ayudar '.$name.' ? ');
 });
 
+$botman->fallback(function($bot) {
+	$bot->reply('Podrias ser mas especifico. Escribe "Ayuda" para mas opciones');
+});
+
+
 $botman->hears('Promocion', function (BotMan $bot) {
     // Create attachment
     //$attachment = new Image('http://lorempixel.com/400/200/');
@@ -117,9 +122,6 @@ $botman->hears('Promocion', function (BotMan $bot) {
     $bot->reply($message);
 });
 
-$botman->fallback(function($bot) {
-	$bot->reply('Podrias ser mas especifico. Escribe "Ayuda" para mas opciones');
-});
 
 $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [

@@ -49,6 +49,11 @@ $botman->hears('.*(Gracias|Ok).*', function ($bot) {
     $bot->reply('Ha sido un placer :D. Escribe "ayuda" para mostrar opciones de interes. ');
 });
 
+$botman->hears('.*(Contactarlos|contacto).*', function ($bot) {
+	$bot->typesAndWaits(2);
+    $bot->reply('Nuestro telefono de contacto es (442) 245 15 65');
+});
+
 
 $botman->hears('.*(Soy {name}|Me llamo {name}).*', function ($bot, $name) {
 	$bot->typesAndWaits(2);

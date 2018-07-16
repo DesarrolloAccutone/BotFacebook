@@ -23,7 +23,7 @@ use BotMan\BotMan\Messages\Conversations\Conversation;
 
 $config = [
 	'facebook' => [
-	  	'token' => 'EAADQLGhaeSkBAG9lBigDs0jTMYg7wZCGUq0qzrkGz7xxJgzCf7kz8VoG6O5u5TcLSS0hKOarp96JVAo0dpZAmsyZCv7ivpPCKH50bMSqVU04XT6zb43tYikqOpVTSFGy2wr0UbORGpjSZBcArz84sfZBHbis6zmhns2GrtUP5FQZDZD',
+	  	'token' => 'EAADQLGhaeSkBAC7FOgeyjVL6X1mexDlo12G9TXGNMFckJx375eTtlVIyaQAEdsxpjXVpjNXiZCGEe3tjfuNdm3Qa7abbvSaPEDsG8VDibdqJezeCAaaND5uYWX0w4cpWY03z2SuIfL90KZAM0WQyiZCfvyTobvgfSjZA1Kip1wZDZD',
 		'app_secret' => '741f3b8f86eea022e6861534e15f7704',
 	    'verification'=>'botmanACC',
 	]

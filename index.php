@@ -73,7 +73,7 @@ $botman->hears('Promocion', function (BotMan $bot) {
 });
 
 
-$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?).*', function ($bot) {
+$botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?|Donde te encuentras?).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);

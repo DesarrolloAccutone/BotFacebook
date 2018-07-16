@@ -88,13 +88,13 @@ $botman->hears('.*(Ubicacion|¿En donde estan?|Direccion|Dirección|Donde estan?
 
 });
 
-$botman->hears('.*(Jabra|Plantronics|Logitech|Precio).*', function ($bot) {
+$botman->hears('.*(Jabra|Plantronics|Logitech).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('Puedes encontrar tu mejor opcion en: https://www.accutone.com.mx, ahi te puede atender mi compañera Humana en el chat de la pagina para solicitar mas información :).')
+	$message = OutgoingMessage::create('No vendemos esa marca :O, pero puedes encontrar tu mejor opcion en: https://www.accutone.com.mx, donde te puede atender mi compañera Humana por medio del chat :).')
 	            ->withAttachment($attachment);
 
 	// Reply message object
@@ -102,13 +102,13 @@ $botman->hears('.*(Jabra|Plantronics|Logitech|Precio).*', function ($bot) {
 
 });
 
-$botman->hears('.*(PWB|PWM|AD2|AD5|ADLEXUS|UCM|UCB|USB|USM|WT|M910|BT|Bluetooth|Cable|Laptop|Computadora|Ordenador|Callcenter|inalambrica|alambrica).*', function ($bot) {
+$botman->hears('.*(PWB|PWM|AD2|AD5|ADLEXUS|UCM|UCB|USB|USM|WT|M910|BT|Bluetooth|Cable|Laptop|Computadora|Ordenador|Callcenter|inalambrica|alambrica|Precio).*', function ($bot) {
 	$attachment = new Location(20.606539, -100.378297, [
 	    'custom_payload' => true,
 	]);
 
 	// Build message object
-	$message = OutgoingMessage::create('Puedes consultar tu mejor opcion, precio y disponibilidad en nuestro sitio web: https://www.accutone.com.mx, mi compañera humana te puede atender en el chat y resolver tus dudas. :).')
+	$message = OutgoingMessage::create('Puedes consultar tu mejor opción, precio y disponibilidad en nuestro sitio web: https://www.accutone.com.mx, mi compañera humana te puede atender en el chat y resolver tus dudas. :).')
 	            ->withAttachment($attachment);
 
 	// Reply message object

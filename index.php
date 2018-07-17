@@ -164,7 +164,7 @@ $botman->hears('Audifonos', function ($bot) {
 
 });
 
-$botman->hears('.*(Soporte|soporte|soporte técnico|soporte tecnico|support|garantia|ticket).*', function ($bot) {
+$botman->hears('.*(Soporte|soporte|soporte técnico|soporte tecnico|support|garantia|ticket|descompuso|descompuesta|no funciona|no se escucha|no sirve|no la detecta|no conecta|no puedo conectar).*', function ($bot) {
 //$botman->hears('Soporte', function ($bot) {
 	// Create attachment
 	$attachment = new Location(20.606539, -100.378297, [
